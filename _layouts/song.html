@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="song-page">
+  <a class="back-link" href="{{ '/' | relative_url }}">← Back to countdown</a>
+
+  <header class="song-header">
+    <div>
+      <p class="eyebrow">Ranked #{{ page.rank }} of 10</p>
+      <h1>{{ page.title }}</h1>
+      <p class="performer">{{ page.performer }}</p>
+    </div>
+    <div class="rating-badge">{{ page.rating | default: "☆ ☆ ☆ ☆ ☆" }}</div>
+  </header>
+
+  <div class="feature-image">
+    {% if page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+    {% else %}
+      <div class="image-placeholder">
+        <span>ADD SINGLE COVER<br>OR RELATED IMAGE</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="review-layout">
+    <div class="review-label">
+      <span class="eyebrow">The review</span>
+    </div>
+    <div class="review-content">
+      {{ content }}
+      <div class="your-rating">
+        <span class="eyebrow">Your rating</span>
+        <p class="stars">{{ page.rating | default: "☆ ☆ ☆ ☆ ☆" }}</p>
+      </div>
+    </div>
+  </div>
+</article>

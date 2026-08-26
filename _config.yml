@@ -1,0 +1,23 @@
+title: "Top 10 Songs of the Summer"
+description: "A curated collection of the songs defining the summer."
+url: ""
+baseurl: ""
+lang: "en-US"
+
+collections:
+  songs:
+    output: true
+    permalink: /songs/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "songs"
+    values:
+      layout: "song"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins: []

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #17231d;
+  --muted: #68736d;
+  --paper: #f5f5ed;
+  --lime: #d8f36a;
+  --orange: #ff7548;
+  --line: #d7ddd1;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--ink); background: var(--paper);
+  font-family: "Space Grotesk", sans-serif; line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+.site-header, .site-footer {
+  width: min(calc(100% - 48px), var(--max)); margin: auto;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.site-header { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.brand { display: flex; gap: 10px; align-items: center; font-weight: 700; letter-spacing: -.03em; }
+.brand-mark { display: grid; place-items: center; width: 30px; height: 30px; background: var(--lime); border-radius: 50%; }
+nav a { font-family: "DM Mono", monospace; font-size: .75rem; text-transform: uppercase; }
+main { width: min(calc(100% - 48px), var(--max)); margin: auto; }
+.hero { padding: 105px 0 130px; max-width: 860px; }
+.eyebrow { margin: 0 0 18px; color: var(--orange); font: 500 .72rem "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { line-height: .95; letter-spacing: -.065em; }
+.hero h1 { font-size: clamp(4rem, 11vw, 9.5rem); margin-bottom: 35px; }
+em { font-family: Georgia, serif; font-weight: 400; }
+.hero-copy { max-width: 430px; color: var(--muted); font-size: 1.05rem; }
+.button { display: inline-flex; gap: 28px; align-items: center; margin-top: 25px; padding: 14px 18px; background: var(--ink); color: var(--paper); font: 500 .75rem "DM Mono", monospace; text-transform: uppercase; }
+.button span { color: var(--lime); font-size: 1rem; }
+.intro { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 30px 0 65px; border-top: 1px solid var(--line); }
+.intro h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin: 0; }
+.intro > p { max-width: 360px; color: var(--muted); align-self: end; }
+.song-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; padding-bottom: 100px; }
+.song-card { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 16px; background: #fff; transition: transform .2s, box-shadow .2s; }
+.song-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px #17231d18; }
+.card-art { aspect-ratio: 1; display: grid; place-items: center; background: var(--lime); }
+.placeholder-art { font: 500 1.5rem "DM Mono", monospace; }
+.card-meta { align-self: center; }
+.rank { color: var(--orange); font: 500 .7rem "DM Mono", monospace; }
+.card-meta h3 { margin: 10px 0 4px; font-size: 1.35rem; line-height: 1.05; }
+.card-meta p, .performer { color: var(--muted); margin: 0; }
+.arrow { position: absolute; right: 18px; top: 14px; font-size: 1.3rem; }
+.site-footer { padding: 25px 0 35px; border-top: 1px solid var(--line); color: var(--muted); font: .68rem "DM Mono", monospace; text-transform: uppercase; }
+.song-page { padding: 50px 0 100px; }
+.back-link { font: .72rem "DM Mono", monospace; text-transform: uppercase; }
+.song-header { display: flex; justify-content: space-between; align-items: end; gap: 25px; padding: 80px 0 45px; }
+.song-header h1 { max-width: 760px; margin: 0 0 15px; font-size: clamp(3.4rem, 9vw, 8.5rem); }
+.performer { font-size: 1.3rem; }
+.rating-badge { padding: 13px 18px; background: var(--lime); font-size: 1.1rem; white-space: nowrap; }
+.feature-image { width: 100%; aspect-ratio: 2.1 / 1; overflow: hidden; background: #dfe7d7; }
+.feature-image img { width: 100%; height: 100%; object-fit: cover; }
+.image-placeholder { display: grid; place-items: center; height: 100%; color: #71806d; font: .75rem "DM Mono", monospace; letter-spacing: .12em; text-align: center; }
+.review-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 70px 0; border-bottom: 1px solid var(--line); }
+.review-content { max-width: 680px; font-family: Georgia, serif; font-size: 1.3rem; }
+.review-content p { margin-bottom: 25px; }
+.your-rating { margin-top: 60px; padding-top: 25px; border-top: 1px solid var(--line); font-family: "Space Grotesk", sans-serif; }
+.stars { color: var(--orange); font: 1.6rem "DM Mono", monospace; letter-spacing: .1em; }
+@media (max-width: 700px) {
+  .site-header, .site-footer, main { width: min(calc(100% - 30px), var(--max)); }
+  .site-header { padding: 20px 0; }
+  .hero { padding: 75px 0 90px; }
+  .hero h1 { font-size: clamp(3.5rem, 17vw, 6rem); }
+  .intro, .review-layout { grid-template-columns: 1fr; gap: 22px; }
+  .song-grid { grid-template-columns: 1fr; }
+  .song-card { grid-template-columns: 105px 1fr; }
+  .song-header { display: block; padding: 55px 0 30px; }
+  .song-header h1 { font-size: clamp(3.4rem, 16vw, 6rem); }
+  .rating-badge { display: inline-block; margin-top: 25px; }
+  .review-content { font-size: 1.15rem; }
+  .site-footer { display: block; }
+  .site-footer span { display: block; margin-bottom: 8px; }
+}
